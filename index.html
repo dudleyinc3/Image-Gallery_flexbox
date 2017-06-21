@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Flex Box</title>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="panels">
+		<div class="panel panel1">
+			<p>Is</p>
+			<p>Your</p>
+			<p>Time</p>
+		</div>
+		<div class="panel panel2">
+			<p>Here</p>
+			<p>Your</p>
+			<p>Time</p>
+		</div>
+		<div class="panel panel3">
+			<p>Its</p>
+			<p>Your</p>
+			<p>Time</p>
+		</div>
+		<div class="panel panel4">
+			<p>Today</p>
+			<p>Your</p>
+			<p>Time</p>
+		</div>
+		<div class="panel panel5">
+			<p>Now</p>
+			<p>Your</p>
+			<p>Time</p>
+		</div>
+	</div>
+	<script>
+	   const panels = document.querySelectorAll('.panel');
+
+	   function toggleOpen() {
+	       this.classList.toggle('open');
+	   }
+
+	   function toggleActive(e) {
+	       if(e.propertyName.includes('flex')) {
+	           this.classList.toggle('open-active');
+	       }
+	   }
+
+	   panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+	   panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
+	</script>
+</body>
+</html>
